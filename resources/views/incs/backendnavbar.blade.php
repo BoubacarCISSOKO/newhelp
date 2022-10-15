@@ -27,7 +27,7 @@
     <div class="row align-items-center py-1 px-xl-3">
         <div class="col-lg-3 d-none d-lg-block">
             <a href="{{route('home')}}"  class="text-decoration-none">
-                <h3 class="m-0 display-5 font-weight-semi-bold"><span class="text-white font-weight-bold border px-3 mr-1">My</span>library</h3>
+                <h3 class="m-0 display-5 font-weight-semi-bold"><span class="text-white font-weight-bold border px-3 mr-1">I</span>sep</h3>
             </a>
         </div>
         <div class="col-lg-6 col-6 text-left">
@@ -68,25 +68,21 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="{{route('home')}}" class="nav-item nav-link active"> <i class="fas fa-home"></i> Accueil</a>
-                        <a href="#" class="nav-item nav-link">Livres</a>
+                        <a href="#" class="nav-item nav-link">Produits</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                        @if (Auth::user())
-                          @if (Auth::user()->role === 'ADMIN')
-                        
-                            <a class="nav-item nav-link" href="{{ route('dashboard')}}">Espace Admin</a>
-                    
-                          @endif
-                      
-                            <form method='POST' action="{{ route('logout')}}">
-                              @csrf
-                              <button type="submit" class="btn">Déconnexion</button>
-                            </form>
-                  
-                          @else
-                        
-                            <a class="nav-item nav-link" href="{{ route('login')}}">Me connecter</a>
+                        @if (Route::has('login'))
+                            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                                @auth
+                                    <a href="{{ url('/') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Accueil</a>
+                                @else
+                                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Se connecter</a>
 
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">S'inscrire</a>
+                                    @endif
+                                @endauth
+                            </div>
                         @endif
 
                     </div>

@@ -27,7 +27,7 @@
     <div class="row align-items-center py-1 px-xl-3">
         <div class="col-lg-3 d-none d-lg-block">
             <a href="{{route('home')}}"  class="text-decoration-none">
-                <h3 class="m-0 display-5 font-weight-semi-bold"><span class="text-white font-weight-bold border px-3 mr-1">My</span>library</h3>
+                <h3 class="m-0 display-5 font-weight-semi-bold"><span class="text-white font-weight-bold border px-3 mr-1">I</span>sep</h3>
             </a>
         </div>
         <div class="col-lg-6 col-6 text-left">

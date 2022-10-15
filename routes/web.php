@@ -13,10 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// produits
+Route::get('/produit', [App\Http\Controllers\ProductController::class, 'create'])->name('products.index');
+Route::get('/produit/cree', [App\Http\Controllers\ProductController::class, 'create'])->name('products.create');
+Route::post('/produit/save', [App\Http\Controllers\ProductController::class, 'store'])->name('products.store');
+
+
+// categories
+Route::get('/categories', [App\Http\Controllers\CategorieController::class, 'index'])->name('categories.index');
+Route::get('/categories/cree', [App\Http\Controllers\CategorieController::class, 'create'])->name('categories.create');
+Route::post('/categories/store', [App\Http\Controllers\CategorieController::class, 'store'])->name('categories.store');
