@@ -1,4 +1,4 @@
-@extends('incs.backendnavbar')
+@extends('admin.sidebar')
 @section('title', 'Listes des categories')
 
 @section('content')
@@ -84,7 +84,7 @@
                         <tr @if($categorie->deleted_at) class="has-background-grey-lighter" @endif>
                             <td>{{$key+1}}</th>
                             <td>
-                            <img src="{{url('images/categories/'.$categorie->image)}}"  alt="Image-categorie" width="100px" height="50px">
+                            <img src="{{url('images/categories/'.$categorie->image)}}"  alt="Image-categorie" width="50px" height="50px">
                             </td>
                             <td>{{$categorie->nom}}</td>
                             <td>

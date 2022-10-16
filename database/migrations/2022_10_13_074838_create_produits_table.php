@@ -19,7 +19,7 @@ class CreateProduitsTable extends Migration
             $table->decimal('price');
             $table->decimal('weight');
             $table->string('added_by')->default('admin');
-            $table->bigInteger('user_id');
+            $table->bigInteger('user_id')->default('1');; 
             $table->unsignedBigInteger('categorie_id');
             $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade')->default('null');
             $table->unsignedBigInteger('souscategorie_id');

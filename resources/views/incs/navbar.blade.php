@@ -63,8 +63,9 @@
             </a>
             <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
                 <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-                    a venir
-                
+                    @foreach (\App\Models\Categorie::all() as $category)
+                        <a href="#" name="recherche" class="nav-item nav-link">{{$category->nom}}</a>
+                    @endforeach
                 </div>
             </nav>
         </div>
@@ -103,17 +104,17 @@
             <div id="header-carousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" style="height: 410px;">
-                        <img class="img-fluid" src="{{url('images/kb.jpg')}}" alt="Image">
+                        <img class="img-fluid" src="{{url('images/1 (3).png')}}" alt="Image">
                         <div class="carousel-caption d-flex flex-column justify-content-center">
                             <div class="p-3" style="max-width: 700px;">
-                                <h4 class="text-light text-uppercase font-weight-medium mb-3">Votre librairie</h4>
+                                <h4 class="text-light text-uppercase font-weight-medium mb-3">Votre boutique</h4>
                                 <h3 class="display-4 text-white font-weight-semi-bold mb-4">ouverte 7j/7j</h3>
                                 <a href="" class="btn btn-light py-2 px-3">Et 24H/24H</a>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item" style="height: 410px;">
-                        <img class="img-fluid" src="{{url('images/pro.png')}}" alt="Image">
+                        <img class="img-fluid" src="{{url('images/1 (2).png')}}" alt="Image">
                         <div class="carousel-caption d-flex flex-column justify-content-center">
                             <div class="p-3" style="max-width: 700px;">
                                 <h4 class="text-light text-uppercase font-weight-medium mb-3">Le numérique au service</h4>
@@ -123,7 +124,7 @@
                         </div>
                     </div>
                     <div class="carousel-item" style="height: 410px;">
-                        <img class="img-fluid" src="{{url('images/post 3.png')}}" alt="Image">
+                        <img class="img-fluid" src="{{url('images/1 (1).png')}}" alt="Image">
                         <div class="carousel-caption d-flex flex-column justify-content-center">
                             <div class="p-3" style="max-width: 700px;">
                                 <h4 class="text-light text-uppercase font-weight-medium mb-3">Tellement beau</h4>

@@ -7,8 +7,9 @@ use App\Models\Categorie;
 use App\Models\Souscategorie;
 use App\Models\Marque;
 use Illuminate\Http\Request;
+
+use Intervention\Image\Facades\Image as Image;
 use Illuminate\Support\Str;
-use Auth;
 
 class ProductController extends Controller
 {
@@ -38,10 +39,13 @@ class ProductController extends Controller
     public function create()
     {
         //
-        $categories = Categorie::all();
+        $categories = Categorie::all(); 
         $marques = Marque::all();
-        return view('produits.create', compact('categories','marques'));
+        $souscategories = Souscategorie::all();
+        return view('produits.create', compact('categories','marques','souscategories'));
     }
+
+    
 
     /**
      * Store a newly created resource in storage.
@@ -52,33 +56,34 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'price' => 'required',
-            'weight' => 'required',
-            'categorie_id'=> 'required',
-            'souscategorie_id' => 'required',
-            'marque_id' => 'required',
-            'quantity'=>'required',
-            'description' => 'required',
-        ]);
         $product = new Product;
-        $product->name = $request->name;
+        $product->nom = $request->nom;
         $product->price = $request->price;
-        $product->weight = $request->weight;
-        $product->added_by = $request->added_by;
-        $product->user_id = Auth::user()->id;
+        $product->description = $request->description;
+        if ($request->slug != null) {
+            $product->slug = str_replace(' ', '-', $request->slug);
+        }
+        else {
+            $product->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->nom)).'-'.Str::random(10);
+        }
+        
+
+        if ($file = $request->file('image')) {
+
+            $optimizeImage = Image::make($file);
+            $optimizePath = public_path() . '/images/produits/';
+            $image = time() . $file->getClientOriginalExtension();
+            $optimizeImage->resize(200, 200, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            $optimizeImage->save($optimizePath . $image, 90);
+
+            $product->image = $image;
+        }
+
         $product->categorie_id = $request->categorie_id;
         $product->souscategorie_id = $request->souscategorie_id;
         $product->marque_id = $request->marque_id;
-        $product->quantity = $request->quantity;
-        $product->description = $request->description;
-
-        if($request->hasFile('image')){
-            $product->image = $request->image->store('images/products/images');
-        }
-        $product->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->nom)).'-'.Str::random(10);
-        
         $product->save();
         return redirect()->route('products.index')->with('info', 'Le produit a bien été crée');
 
@@ -118,47 +123,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
-        $product->nom = $request->nom;
-        $product->user_id = Auth::user()->id;
-        $product->added_by = $request->added_by;
-        $product->categorie_id = $request->categorie_id;
-        $product->souscategorie_id = $request->souscategorie_id;
-        $product->soussouscategorie_id = $request->soussouscategorie_id;
-        $product->marque_id = $request->marque_id;
-        $product->prix_unitaire = $request->prix_unitaire;
-        $product->prix_achat = $request->prix_achat;
-        $product->description = $request->description;
-        $product->stocks = $request->stocks;
-        $product->unite = $request ->unite;
-        $product->remise = $request->remise;
-        $product->type_remise = $request->type_remise;
-        $product->taxe = $request->taxe;
-        $product->type_taxe = $request->type_taxe;
-        $product->tags = implode('|',$request->tags);
-        $product->stocks = $request->stocks;
-       
-       
-        $product->type_livraison = $request->type_livraison;
-        if($request->type_livraison == "gratuit")
-        {
-            $product->cout_livraison = 0;
-        }
-        elseif($request->type_livraison == "payant")
-        {
-            $product->cout_livraison = $request->cout_livraison;
-        }
-
-        if($request->hasFile('image')){
-            $product->image = $request->image->store('images/products/images');
-        }
-
-        $product->slug = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $request->nom)).'-'.Str::random(10);
-
-       
-        
-        $product->save();
-        return redirect()->route('products.index')->with('info', 'Le produit a bien été modifié');
+     
     }
 
     /**
