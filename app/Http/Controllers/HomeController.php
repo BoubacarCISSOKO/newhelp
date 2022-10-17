@@ -38,8 +38,19 @@ class HomeController extends Controller
 
     public function admindashbord()
     {
-        $products = Produit::orderBy('created_at', 'desc');
+        $products = Article::orderBy('created_at', 'desc');
         $products = $products->paginate(15);
         return view("admin.template", compact("products"));
     }
+
+    public function product($id)
+    {
+        $product  = Article::where('id', $id)->first();
+        if($product!=null){
+            //updateCartSetup();
+            return view('detailsproduit', compact('product'));
+        }
+        abort(404); 
+    }
+    
 }

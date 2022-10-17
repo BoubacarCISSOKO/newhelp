@@ -25,11 +25,9 @@
  <div class="container-fluid bg-secondary mt-1 pt-1">
         <div class="row border-top border-light mx-xl-5 py-4">
             <div class="col-md-6 px-xl-0">
-                <p class="mb-md-0 text-center text-md-left">
-                    &copy; <a class="font-weight-semi-bold text-white" href="#">Your Site Name</a>. All Rights Reserved. Designed
-                    by
-                    <a class="font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a><br>
-                    Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+            <p class="mb-md-0 text-center text-md-left">
+                     <a class="font-weight-semi-bold text-white" href="#">Shop ISEP</a> © 2022 - &copy;Tous droits réservés. Réalisé
+                    par <strong>Maimouna  SY</strong>
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">

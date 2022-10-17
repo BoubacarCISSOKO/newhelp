@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('produit/{id}', [App\Http\Controllers\HomeController::class, 'product'])->name('product');
 Route::get('/admindashbord', [App\Http\Controllers\HomeController::class, 'admindashbord'])->name('admindashbord');
 
 
@@ -55,3 +56,10 @@ Route::post('/souscategories/store', [App\Http\Controllers\SouscategorieControll
 Route::get('/marques', [App\Http\Controllers\MarqueController::class, 'index'])->name('marques.index');
 Route::get('/marques/cree', [App\Http\Controllers\MarqueController::class, 'create'])->name('marques.create');
 Route::post('/marques/store', [App\Http\Controllers\MarqueController::class, 'store'])->name('marques.store');
+
+// panier
+Route::get('cart', [App\Http\Controllers\CartController::class, 'cartList'])->name('cart.list');
+Route::post('cart', [App\Http\Controllers\CartController::class, 'addToCart'])->name('cart.store');
+Route::post('update-cart', [App\Http\Controllers\CartController::class, 'updateCart'])->name('cart.update');
+Route::post('remove', [App\Http\Controllers\CartController::class, 'removeCart'])->name('cart.remove');
+Route::post('clear', [App\Http\Controllers\CartController::class, 'clearAllCart'])->name('cart.clear');

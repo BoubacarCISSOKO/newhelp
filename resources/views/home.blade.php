@@ -27,7 +27,7 @@
                 <div class="col-lg-2 col-md-6 col-sm-6 col-12">
                     <div class="product-categories-wrap product-categories-border mb-15">
                         <blockquote class="blockquote" style="text-align: center;">
-                            <a href="#">
+                            <a href="{{ route('product', $article->id) }}">
                                 <img class="margin-right-15 width-hight" width="95" height="95" align="left" src="{{url('images/articles/'.$article->photo)}}"
                                 title="#">
                             </a>
