@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,3 +65,18 @@ Route::post('cart', [App\Http\Controllers\CartController::class, 'addToCart'])->
 Route::post('update-cart', [App\Http\Controllers\CartController::class, 'updateCart'])->name('cart.update');
 Route::post('remove', [App\Http\Controllers\CartController::class, 'removeCart'])->name('cart.remove');
 Route::post('clear', [App\Http\Controllers\CartController::class, 'clearAllCart'])->name('cart.clear');
+
+
+//commande
+Route::middleware('auth')->group(function () {
+    Route::get('/commande', [OrdersController::class,'index'])->name('commande.index');
+    Route::post('commande/ajouter', [OrdersController::class,'store'])->name('commande.store');
+    Route::get('commande/confirmation', [OrdersController::class,'confirmation'])->name('commande.confirmation');
+});
+
+//client
+Route::middleware('auth')->group(function () {
+    Route::name('client')->get('compte', [ClientController::class, 'index' ]);
+    Route::name('client.pdf')->get('client/pdf', [ClientController::class, 'pdf' ]);
+    Route::name('client.update')->put('compte', [ClientController::class, 'update' ]);
+});

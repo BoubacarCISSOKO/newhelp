@@ -131,7 +131,7 @@
                             Total: {{ Cart::getTotal() }} fcfa
                             </div>
                             <div class="col-lg-3">
-                                <a href="" class="btn btn-primary">Commander</a>
+                                <a href="{{ route('commande.index') }}" class="btn btn-primary">Commander</a>
                             </div>
                        </div>
                     </div>
