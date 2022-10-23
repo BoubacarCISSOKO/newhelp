@@ -75,7 +75,8 @@
                             <a class="nav-item nav-link" href="{{ route('dashboard')}}">Espace Admin</a>
                     
                           @endif
-                      
+                          <a href="{{ url('/client') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Profil</a>
+
                             <form method='POST' action="{{ route('logout')}}">
                               @csrf
                               <button type="submit" class="btn">Déconnexion</button>
