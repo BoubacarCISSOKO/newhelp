@@ -59,7 +59,7 @@ class ArticlesController extends Controller
         $article->souscategorie_id = $request->souscategorie_id;
         $article->marque_id = $request->marque_id;
         $article->description = $request->description;
-       
+        
         if ($file = $request->file('photo')) {
 
             $optimizeImage = Image::make($file);
@@ -98,6 +98,11 @@ class ArticlesController extends Controller
     public function edit($id)
     {
         //
+        $article  = Article::findOrFail($id);
+        $categories = Categorie::all(); 
+        $marques = Marque::all();
+        $souscategories = Souscategorie::all();
+        return view('articles.editview', compact('article','categories','marques','souscategories'));
     }
 
     /**
@@ -110,6 +115,31 @@ class ArticlesController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $article = Article::find($id);
+        $article->name = $request->name;
+        $article->price = $request->price;
+        $article->categorie_id = $request->categorie_id;
+        $article->souscategorie_id = $request->souscategorie_id;
+        $article->marque_id = $request->marque_id;
+        $article->description = $request->description;
+        
+        if ($file = $request->file('photo')) {
+
+            $optimizeImage = Image::make($file);
+            $optimizePath = public_path() . '/images/articles/';
+            $image = time() . $file->getClientOriginalExtension();
+            $optimizeImage->resize(200, 200, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            $optimizeImage->save($optimizePath . $image, 90);
+
+            $article->photo = $image;
+        }
+
+        $article->save(); 
+        return redirect()->route('articles.index')->with('info', 'L\'article a bien été modifié');
+
     }
 
     /**
@@ -121,5 +151,9 @@ class ArticlesController extends Controller
     public function destroy($id)
     {
         //
+        $article =  Article::find($id);
+        $article->delete();
+        return redirect()->route('articles.index')->with('info', 'L\'article a bien été supprimé');
+
     }
 }

@@ -37,6 +37,8 @@ Route::post('/produit/save', [App\Http\Controllers\ProductController::class, 'st
 Route::get('/articles', [App\Http\Controllers\ArticlesController::class, 'index'])->name('articles.index');
 Route::get('/articles/cree', [App\Http\Controllers\ArticlesController::class, 'create'])->name('articles.create');
 Route::post('/articles/save', [App\Http\Controllers\ArticlesController::class, 'store'])->name('articles.store');
+Route::get("articles/edit/{id}", [App\Http\Controllers\ArticlesController::class, 'edit'])->name('articles.edit');
+Route::put("articles/update/{id}", [App\Http\Controllers\ArticlesController::class, 'update'])->name('articles.update');
 
 
 

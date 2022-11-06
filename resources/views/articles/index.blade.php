@@ -97,12 +97,12 @@
                                     <i class="fas fa-eye"></i></a>
                                 </a>
                             
-                                <a href="#" class="btn btn-xs btn-warning" title="Modifier">
+                                <a  href="{{ route('articles.edit',$article->id) }}" class="btn btn-xs btn-warning" title="Modifier">
                                     
                                     <i class="fa fas fa-edit"></i>
                                     
                                 </a>
-                                <a onclick="#" class="btn btn-xs btn-danger" title="Supprimer">
+                                <a type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#{{$article->id}}article">
                                     <i class="fas fa-trash"></i>
                                 
                                 </a>
@@ -124,4 +124,6 @@
         <!-- /.container-fluid -->
     </section>
 </div>
+
+
 @endsection
