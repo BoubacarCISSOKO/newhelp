@@ -39,6 +39,7 @@ Route::get('/articles/cree', [App\Http\Controllers\ArticlesController::class, 'c
 Route::post('/articles/save', [App\Http\Controllers\ArticlesController::class, 'store'])->name('articles.store');
 Route::get("articles/edit/{id}", [App\Http\Controllers\ArticlesController::class, 'edit'])->name('articles.edit');
 Route::put("articles/update/{id}", [App\Http\Controllers\ArticlesController::class, 'update'])->name('articles.update');
+Route::delete("articles/destroy/{article}", [App\Http\Controllers\ArticlesController::class, 'destroy'])->name('articles.destroy');
 
 
 
