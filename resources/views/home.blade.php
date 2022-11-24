@@ -18,14 +18,14 @@
             <div class="col-md-6 col-lg-3 pb-5">
                 <div class="h-100 py-5 services-icon-wap shadow">
                     <div class="h1 text-success text-center"><i class="fa fa-truck fa-lg"></i></div>
-                    <h2 class="h5 mt-4 text-center">Delivery Services</h2>
+                    <h2 class="h5 mt-4 text-center">Services de livraison</h2>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-3 pb-5">
                 <div class="h-100 py-5 services-icon-wap shadow">
                     <div class="h1 text-success text-center"><i class="fas fa-exchange-alt"></i></div>
-                    <h2 class="h5 mt-4 text-center">Shipping & Return</h2>
+                    <h2 class="h5 mt-4 text-center">Expédition et retour</h2>
                 </div>
             </div>
 
@@ -39,7 +39,7 @@
             <div class="col-md-6 col-lg-3 pb-5">
                 <div class="h-100 py-5 services-icon-wap shadow">
                     <div class="h1 text-success text-center"><i class="fa fa-user"></i></div>
-                    <h2 class="h5 mt-4 text-center">24 Hours Service</h2>
+                    <h2 class="h5 mt-4 text-center">Service 24H/24, 7j/7j</h2>
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
             @foreach($articles as $key => $article)
                 <div class="col-12 col-md-4 p-5 mt-3">
                     <div class="card rounded-0">
-                        <a href="{{ route('product', $article->id) }}"><img src="{{url('images/articles/'.$article->photo)}}" class="card-img rounded-0 img-fluid" style=" width: 150px;height: 150px;"></a>
+                        <a href="{{ route('product', $article->id) }}"><img src="{{url('images/articles/'.$article->photo)}}" class="card-img rounded-0 img-fluid" style=" width: 100%;height: 150px;"></a>
                         <div class="card-img-overlay rounded-0 product-overlay ">
                             <ul class="list-unstyled">
                                 <li><a class="btn btn-success text-white mt-2" href="{{ route('product', $article->id) }}"><i class="far fa-eye"></i></a></li>
@@ -86,7 +86,7 @@
                                 <i class="text-muted fa fa-star"></i>
                             </li>
                         </ul>
-                        <p class="text-center mb-0">{{$article->price}} fcfa</p>
+                        <p class="text-center mb-0">{{number_format($article->price) }} fcfa</p>
                     </div>
                 </div>
 

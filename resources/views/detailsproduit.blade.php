@@ -6,7 +6,7 @@
     .position-relative{
         
         border-radius: 15px;
-        background-color: #bcbcbc;
+        background-color: #4A132F;
     }
 </style>
     <!-- Featured Start -->
@@ -19,8 +19,8 @@
                 <br>
                 </dt>
                 <dd class="col-sm-6">
-                <h3 class="text-gray-700 uppercase">{{ $product->name }}</h3>
-                    <span class="mt-2 text-gray-500">{{ $product->price }} fcfa</span>
+                <h3 class="text-gray-700 uppercase">Nom: {{ $product->name }}</h3>
+                    <span class="mt-2 text-gray-500">Prix: {{number_format($product->price) }} fcfa</span>
                     <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" value="{{ $product->id }}" name="id">

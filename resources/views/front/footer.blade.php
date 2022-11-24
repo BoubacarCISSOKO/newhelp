@@ -1,5 +1,5 @@
  <!-- Start Footer -->
-  <footer class="bg-dark mt-2" id="tempaltemo_footer">
+  <footer class="bg-dark mt-2" id="tempaltemo_footer" style="background:#95275E !important">
         <div class="container">
             <div class="row">
 

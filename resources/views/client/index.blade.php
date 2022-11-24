@@ -1,7 +1,11 @@
 @extends('incs.navslider')
 
 @section('content')
-
+<style>
+    a{
+        text-decoration:none
+    }
+</style>
 
 <!-- my account wrapper start -->
 <div class="my-account-wrapper pt-5 pb-50">

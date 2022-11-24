@@ -35,8 +35,8 @@
                                     </div>
                                     <div class="col-lg-6 mb-0 d-flex align-items-center">
                                         <div class="text-align-left align-self-center">
-                                            <h1 class="h1 text-success"><b>Zay</b> eCommerce</h1>
-                                            <h3 class="h2">Tiny and Perfect eCommerce Template</h3>
+                                            <h1 class="h1 text-success"><b>ISEPShop</b> eCommerce</h1>
+                                            <h3 class="h2">commerce électronique</h3>
                                             
                                         </div>
                                     </div>
@@ -51,8 +51,8 @@
                                     </div>
                                     <div class="col-lg-6 mb-0 d-flex align-items-center">
                                         <div class="text-align-left">
-                                            <h1 class="h1">Proident occaecat</h1>
-                                            <h3 class="h2">Aliquip ex ea commodo consequat</h3>
+                                            <h1 class="h1">à savoir</h1>
+                                            <h3 class="h2">B2C (Business-to-Consumer)</h3>
                                            
                                         </div>
                                     </div>
@@ -67,8 +67,8 @@
                                     </div>
                                     <div class="col-lg-6 mb-0 d-flex align-items-center">
                                         <div class="text-align-left">
-                                            <h1 class="h1">Repr in voluptate</h1>
-                                            <h3 class="h2">Ullamco laboris nisi ut </h3>
+                                            <h1 class="h1">Types de modèles </h1>
+                                            <h3 class="h2">Commerciaux de commerce électronique </h3>
                                           
                                         </div>
                                     </div>

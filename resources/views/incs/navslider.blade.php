@@ -1,114 +1,47 @@
+<!doctype html>
+<html lang="en">
 <head>
+<title>ISEPShop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Libraries Stylesheet -->
-  <link rel="stylesheet" href="{{ url('fronts/lib/owlcarousel/assets/owl.carousel.min.css') }}">
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
-  <!-- css style -->
-  <link rel="stylesheet" href="{{ url('fronts/css/style.css') }}">
-  <link rel="stylesheet" href="{{ url('fronts/css/style.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/templatemo.css')}}">
+    <link rel="stylesheet" href="{{ url('assets/css/custom.css')}}">
 
-  <!-- google cdn -->
-  <!-- Google Web Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="{{url('assets/css/fontawesome.min.css')}}">
 
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
 </head>
-<style>
-  .mbayang{
-    border-bottom: #fff 2px solid
-  }
-</style>
- <!-- Topbar Start -->
- <div class="container-fluid mbayang">
+  <body >
+    @include('front.navbar')
+  
 
-    <div class="row align-items-center py-1 px-xl-3">
-        <div class="col-lg-3 d-none d-lg-block">
-            <a href="{{route('home')}}"  class="text-decoration-none">
-                <h3 class="m-0 display-5 font-weight-semi-bold"><span class="text-white font-weight-bold border px-3 mr-1">I</span>sep</h3>
-            </a>
-        </div>
-        <div class="col-lg-6 col-6 text-left">
-            <form action="">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for products">
-                    <div class="input-group-append">
-                        <span class="input-group-text bg-transparent text-white">
-                            <i class="fa fa-search"></i>
-                        </span>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="col-lg-3 col-6 text-right">
-            <a href="" class="btn border" style="color:white !important">
-            <img class="img-fluid" src="{{url('images/icon-cart.png')}}" width="30px" height="30px" alt="Image">
-                <span class="badge" style="margin-top:-10px !important,"> {{ Cart::getTotalQuantity()}} Panier</span>
-            </a>
-        </div>
+    <div class="container justify-content-cente mt-3">
+      @include('incs.flash')
     </div>
-</div>
-<!-- Topbar End -->
+    
+    @yield('content')
+    <!-- Optional JavaScript; choose one of the two! -->
 
-<div class="container-fluid mb-5">
-    <div class="row border-top px-xl-5">
-       
-        <div class="col-lg-12">
-            <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-                <a href="" class="text-decoration-none d-block d-lg-none">
-                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
-                </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav mr-auto py-0">
-                        <a href="{{route('home')}}" class="nav-item nav-link active"> <i class="fas fa-home"></i> Accueil</a>
-                        <a href="#" class="nav-item nav-link">Livres</a>
-                    </div>
-                    <div class="navbar-nav ml-auto py-0">
-                        @if (Auth::user())
-                          @if (Auth::user()->role === 'ADMIN')
-                        
-                            <a class="nav-item nav-link" href="{{ route('dashboard')}}">Espace Admin</a>
-                    
-                          @endif
-                          <a href="{{ url('/client') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Profil</a>
+    @include('front.footer')
 
-                            <form method='POST' action="{{ route('logout')}}">
-                              @csrf
-                              <button type="submit" class="btn">Déconnexion</button>
-                            </form>
-                  
-                          @else
-                        
-                            <a class="nav-item nav-link" href="{{ route('login')}}">Me connecter</a>
-
-                        @endif
-
-                    </div>
-                </div>
-            </nav>
-            <div id="header-carousel" class="carousel slide" data-ride="carousel">
-            @yield('content')
-            </div>
-        </div>
-    </div>
-</div>
-
-@include('incs.footer')
-<!-- Back to Top -->
-<a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up text-white"></i></a>
-
-<!-- JavaScript Libraries -->
+<!-- JavaScript Libraries pour le chargement meme page -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
-<link rel="stylesheet" href="{{ url('fronts/lib/owlcarousel/assets/owl.carousel.min.css') }}">
-<script  src="{{ url('fronts/lib/owlcarousel/owl.carousel.min.js') }}"></script>
-<script  src="{{ url('fronts/lib/easing/easing.min.js') }}"></script>
-
-<!-- Template Javascript -->
-<script  src="{{ url('fronts/js/main.js') }}"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+     <!-- Start Script -->
+    <script src="{{url('assets/js/jquery-1.11.0.min.js')}}"></script>
+    <script src="{{url('assets/js/jquery-migrate-1.2.1.min.js')}}"></script>
+    <script src="{{url('assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url('assets/js/templatemo.js')}}"></script>
+    <script src="{{ url('assets/js/custom.js') }}"></script>
+    <!-- End Script -->
+  </body>
+</html>
