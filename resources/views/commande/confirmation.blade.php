@@ -1,4 +1,4 @@
-@extends('incs.navslider')
+@extends('base')
 
 @section('content')
 

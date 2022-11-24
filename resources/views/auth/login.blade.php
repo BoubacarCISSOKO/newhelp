@@ -1,4 +1,4 @@
-@extends('incs.backendnavbar')
+@extends('base')
 
 @section('content')
 <div class="container">

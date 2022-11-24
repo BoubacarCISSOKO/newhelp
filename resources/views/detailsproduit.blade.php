@@ -1,4 +1,4 @@
-@extends('incs.navslider')
+@extends('base')
 
 @section('content')
 
@@ -6,7 +6,7 @@
     .position-relative{
         
         border-radius: 15px;
-        background-color: #92959a;
+        background-color: #bcbcbc;
     }
 </style>
     <!-- Featured Start -->

@@ -1,7 +1,6 @@
-@extends('incs.navslider')
+@extends('base')
 
 @section('content')
-
 
 <div class="checkout-main-area pt-20 pb-120">
     <div class="container">  

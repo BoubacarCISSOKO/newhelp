@@ -1,4 +1,4 @@
-@extends('incs.navslider')
+@extends('base')
 
 @section('content')
 
@@ -20,48 +20,7 @@
         <div class="row">
             <div class="col-12">
             <div class="card">
-                <div class="card-header">
-                    @if(session()->has('info'))
-                        <div class="container">
-                            <div class="alert alert-dismissible alert-success fade show" role="alert">
-                                {{ session('info') }}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        </div>
-                        @elseif(session()->has('error'))
-                        <div class="container">
-                            <div class="alert alert-dismissible alert-danger fade show" role="alert">
-                                {{ session('error') }}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        </div>
-                    @endif
-
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    @if($message = Session::get('success'))
-                    <div class="alert alert-success alert-block">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                            <strong>{{ $message }}</strong>
-                    </div>
-                    @endif
-
-                  
-                    <!-- end csv -->
-                </div>
-                <!-- /.card-header -->
+               
                 <div class="card-body">
 
                 <table id="example1" class="table table-bordered table-striped">
