@@ -20,7 +20,8 @@
                 </dt>
                 <dd class="col-sm-6">
                 <h3 class="text-gray-700 uppercase">Nom: {{ $product->name }}</h3>
-                    <span class="mt-2 text-gray-500">Prix: {{number_format($product->price) }} fcfa</span>
+                    <span class="mt-2 text-gray-500">Prix: {{number_format($product->price) }} fcfa</span><br>
+                    <span class="mt-2 text-gray-500">Prix: {{($product->description) }}</span>
                     <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" value="{{ $product->id }}" name="id">

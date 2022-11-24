@@ -92,13 +92,7 @@
 
               @endforeach
 
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            
-                          
-                        </div>
-                    </div>
-                  
+                
                 </div>
                 <div div="row">
                     <ul class="pagination pagination-lg justify-content-end">

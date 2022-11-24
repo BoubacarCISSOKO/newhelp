@@ -39,7 +39,7 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="{{route('home')}}">
+            <a class="navbar-brand text-success logo h3 align-self-center" href="{{route('home')}}">
                ISEPShop
             </a>
 

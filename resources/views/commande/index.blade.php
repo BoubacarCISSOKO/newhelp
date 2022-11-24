@@ -104,85 +104,38 @@
                                         </ul>
                                     </div>
                                     
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="payment-method">
-                            <h4 class="grand-totall-title">Moyens de paiements</span></h4>
-                                                        
-                            
-                            <div class="pay-top sin-payment">
-                                <input id="payment_method_1" class="input-radio" type="radio" value="PostePay" checked="checked" name="payment_method">
-                                <label for="payment_method_1"> Poste Pay </label>
-                                <div class="payment-box payment_method_bacs">
-                                    <p>Effectuez votre paiement directement sur notre compte bancaire. Veuillez utiliser votre ID de commande comme référence de paiement.</p>                                            
-                                </div>
-                            </div>
-                            <div class="pay-top sin-payment">
-                                <input id="payment-method-2" class="input-radio" type="radio" value="Wari" name="payment_method">
-                                <label for="payment-method-2">Wari</label>
-                                <div class="payment-box payment_method_bacs">
-                                    <p style="font-family: times, serif; font-size:14pt; font-style:italic">
-                                        Payer facilement les bénéficiaires et les travailleurs, même lorsqu'il n'y a pas de banque
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="pay-top sin-payment">
-                                <input id="payment-method-3" class="input-radio" type="radio" value="OrangeMoney" name="payment_method">
-                                <label for="payment-method-3">Orange Money</label>
-                                <div class="payment-box payment_method_bacs">
-                                    <p style="font-family: times, serif; font-size:14pt; font-style:italic">Payez simplement vos achats avec Orange Money. <br>
-                                        Vous devez pour cela obtenir un code de paiement: <br>
-                                        - Composez le #144#391# <br>
-                                        - Entrez votre code secret Orange Money <br>
-                                        - Vous recevez ensuite un SMS avec un code de paiement utilisable pendant 15 minutes. <br>
-                                        - Conservez ce code. Il vous sera demandé pour régler votre commande par la suite. <br>
-                                        - Cliquez pour revenir sur le site PostMarket une fois votre paiement terminé, dans le cas contraire, votre paiement ne sera pas enregistré.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="pay-top sin-payment">
-                                <input id="payment-method-3" class="input-radio" type="radio" value="Wave" name="payment_method">
-                                <label for="payment-method-3"> Wave</label>
-                                <div class="payment-box payment_method_bacs">
-                                    <p style="font-family: times, serif; font-size:14pt; font-style:italic">
-                                    Déposez et retirez gratuitement. <br>
-                                    Payez vos factures sans frais. <br>
-                                    Transferez de l’argent pour 1%.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="pay-top sin-payment">
-                                <input id="payment-method-3" class="input-radio" type="radio" value="PaiementALaLivraison" name="payment_method">
-                                <label for="payment-method-3">Paiement à la livraison</label>
-                                <div class="payment-box payment_method_bacs">
-                                    <p style="font-family: times, serif; font-size:14pt; font-style:italic">
-                                    Lors de la finalisation de la commande, sélectionnez simplement l'option "Espèces à la livraison" comme moyen de paiement. <br>
-                                    Si vous n'êtes pas satisfait(e) de votre commande, vous avez toujours la possibilité de la rendre à notre livreur sans payer.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="pay-top sin-payment sin-payment-3">
-                                <input id="payment-method-4" class="input-radio" type="radio" value="Virement" name="payment_method">
-                                <label for="payment-method-4">VIREMENT</label>
-                                <div class="payment-box payment_method_bacs">
-                                    <p style="font-family: times, serif; font-size:14pt; font-style:italic">
-                                    Au guichet : En vous présentant au guichet de votre banque avec votre pièce d’identité et les informations bancaires du débiteur et du bénéficiaire.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                                    <div class="card mb-4 mb-lg-0">
+                                        <div class="card-body">
+                                            <p><strong>Moyens de paiements</strong></p>
+                                            <input id="payment_method_1" class="input-radio" type="radio" value="PostePay" checked="checked" name="payment_method">
 
-                        <div class="Place-order">
-                                <button type="submit" class="button bg-mody"> Passer la commande</button>   
+                                            <img class="me-2" width="45px"
+                                            src="{{url('images/2 (2).png')}}"
+                                            alt="Visa" />
+                                            <input id="payment_method_1" class="input-radio" type="radio" value="PostePay" checked="checked" name="payment_method">
+
+                                            <img class="me-2" width="45px"
+                                            src="{{url('images/2 (3).png')}}"
+                                            alt="American Express" />
+                                            <input id="payment_method_1" class="input-radio" type="radio" value="PostePay" checked="checked" name="payment_method">
+
+                                            <img class="me-2" width="45px"
+                                            src="{{url('images/2 (1).png')}}"
+                                            alt="Mastercard" />
+                                            
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block m-2">
+                                        Passer la commande
+                                    </button>
+                                </div>
                             </div>
+                            
+                        </div>
                     </div>
                 </div>
+               
             </form>
         </div>
     </div>

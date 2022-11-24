@@ -32,8 +32,10 @@
                    <h4> Groupe Isep Shop vous recmercie!</h4>
                    <blockquote class="blockquote">
                         <p class="mb-0 card-title"class="text-capitalize">Un e-mail vous sera envoyé via l'adresse   <span class="text-lowercase text-danger"> <strong>{{ Auth::user()->email }}</strong> </span> <br> avec toutes ces informations.</p>
+                        <hr>
                         <footer class="blockquote-footer card-text text-capitalize">Pour toute question ou information complémentaire,</footer>
                         <footer class="blockquote-footer card-text text-capitalize">merci de contacter notre <cite title="support client">support client.</cite></footer>
+                        <hr>
                         <a href="{{route('home')}} " class="btn bg-mody"><strong><i class="bi bi-arrow-left-circle"></i> Retour au catalogue</strong></a>
                     </blockquote>
                 </div>
